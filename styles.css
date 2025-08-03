@@ -18,21 +18,27 @@ body {
 header {
   background-color: #007bff;
   padding: 20px;
-  text-align: center;
   position: sticky;
   top: 0;
   z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 header h1 {
-  margin-bottom: 10px;
-  font-size: 2em;
   color: #fff;
+  margin-bottom: 10px;
+}
+
+nav {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
 nav a {
   color: #fff;
-  margin: 0 15px;
   text-decoration: none;
   font-weight: bold;
   font-size: 1em;
@@ -42,8 +48,8 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* Hero section */
-.hero {
+/* Hero / Intro */
+section.hero {
   background-color: #e2e2e2;
   padding: 30px 20px;
   margin-top: 20px;
@@ -51,17 +57,17 @@ nav a:hover {
   text-align: center;
 }
 
-.hero h2 {
+section.hero h2 {
   font-size: 2em;
   margin-bottom: 10px;
 }
 
-.hero p {
+section.hero p {
   font-size: 1.2em;
 }
 
 /* Sections */
-.section {
+section {
   margin-top: 40px;
   padding: 20px;
   background-color: #fff;
@@ -71,10 +77,10 @@ nav a:hover {
   margin-right: auto;
 }
 
-/* Section headings */
-.section h2 {
-  margin-bottom: 20px;
+/* Section headers */
+section h2 {
   font-size: 2em;
+  margin-bottom: 20px;
   border-bottom: 2px solid #007bff;
   padding-bottom: 10px;
 }
@@ -86,14 +92,15 @@ nav a:hover {
   gap: 20px;
 }
 
-/* Individual article styles */
 article {
   background-color: #f9f9f9;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  display: flex;
-  flex-direction: column;
+  transition: box-shadow 0.3s;
+}
+
+article:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 article img {
@@ -109,10 +116,10 @@ article h3 {
 
 article p {
   margin: 0 10px 10px 10px;
-  flex-grow: 1;
 }
 
-.read-more {
+/* Read More Button */
+a.read-more {
   display: inline-block;
   margin: 10px;
   padding: 8px 12px;
@@ -120,10 +127,10 @@ article p {
   color: #fff;
   border-radius: 4px;
   text-decoration: none;
-  align-self: flex-start;
+  transition: background-color 0.3s;
 }
 
-.read-more:hover {
+a.read-more:hover {
   background-color: #0056b3;
 }
 
@@ -131,18 +138,7 @@ article p {
 footer {
   margin-top: 40px;
   padding: 20px;
-  text-align: center;
   background-color: #222;
   color: #fff;
-}
-
-/* Responsive adjustments */
-@media(max-width: 768px){
-  header {
-    flex-direction: column;
-  }
-
-  nav {
-    margin-top: 10px;
-  }
+  text-align: center;
 }
